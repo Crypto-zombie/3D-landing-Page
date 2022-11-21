@@ -53,7 +53,14 @@ export default function Configurator() {
   const ContextBridge = useContextBridge(ControlContext);
   return (
     <div className={Style.wrapper}>
-      <Canvas camera={{ position: [0, -30, 130], fov: 50 }} dpr={[1, 2]}>
+      <Canvas
+        camera={{
+          position: [3.099, 4.367, 8.122],
+          rotation: [0, 0, 0],
+          fov: 50,
+        }}
+        dpr={[1, 2]}
+      >
         <color attach='background' args={['#03032C']} />
         <ContextBridge>
           <ambientLight intensity={0.4} />
@@ -61,13 +68,8 @@ export default function Configurator() {
           <pointLight intensity={1.5} position={[-10, 10, -10]} />
           <pointLight intensity={1.5} position={[-10, 30, -10]} />
           <ModelLoader />
-          <Electron
-            position={[0, 44, 0]}
-            rotation={[Math.PI / 2, 0, Math.PI / 2]}
-            speed={6}
-          />
-          <Sphere position={[0, 44, 0]} args={[0.55, 100, 64]}>
-            <meshBasicMaterial color={[6, 0.5, 2]} toneMapped={false} />
+          <Sphere position={[0, 3.73, 0]} args={[0.05, 100, 64]}>
+            <meshBasicMaterial color={[1, 0.9, 12]} toneMapped={false} />
           </Sphere>
           <Particles />
           <Stars saturation={0} count={400} speed={0.5} />
@@ -75,11 +77,10 @@ export default function Configurator() {
             <Bloom
               kernelSize={3}
               luminanceThreshold={0}
-              luminanceSmoothing={0.4}
-              intensity={0.6}
+              luminanceSmoothing={0.8}
+              intensity={0.2}
             />
           </EffectComposer>
-          <OrbitControls />
         </ContextBridge>
       </Canvas>
     </div>

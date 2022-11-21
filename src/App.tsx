@@ -4,7 +4,7 @@ import { ControlProvider } from 'provider/ControlProvider';
 function App() {
   return (
     <ControlProvider>
-      <Configurator />;
+      <Configurator />
     </ControlProvider>
   );
 }
