@@ -10,7 +10,6 @@ export default function Particles() {
   const aspect = size.width / viewport.width;
 
   const dummy = useMemo(() => new THREE.Object3D(), []);
-  // Generate some random positions, speed factors and timings
   const particles = useMemo(() => {
     const temp = [];
     for (let i = 0; i < count; i++) {
